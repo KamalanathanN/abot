@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot name="abot_sim" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <gazebo reference="chassis"><!--base_link-->
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <gazebo reference="wheel"><!--wheel_left_link>-->
+	<mu1>10.0</mu1>
+	<mu2>10.0</mu2>
+	<kp>1000000.0</kp>
+	<kd>100.0</kd>
+	<minDepth>0.001</minDepth>
+	<maxVel>1.0</maxVel>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <gazebo reference="wheel_2"><!--wheel_right_link-->
+	<mu1>10.0</mu1>
+	<mu2>10.0</mu2>
+	<kp>1000000.0</kp>
+	<kd>100.0</kd>
+	<minDepth>0.001</minDepth>
+	<maxVel>1.0</maxVel>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="abot_controller" filename="libgazebo_ros_diff_drive.so">
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <odometrySource>world</odometrySource>
+        <publishOdomTF>true</publishOdomTF>
+        <robotBaseFrame>base_link</robotBaseFrame>
+        <publishWheelTF>true</publishWheelTF>
+        <publishTf>true</publishTf>
+        <publishWheelJointState>true</publishWheelJointState>
+        <legacyMode>true</legacyMode>
+        <updateRate>30</updateRate>
+        <leftJoint>LW</leftJoint>
+        <rightJoint>RW</rightJoint>
+        <wheelSeparation>0.1512</wheelSeparation>
+        <wheelDiameter>0.050</wheelDiameter>
+        <wheelAcceleration>1</wheelAcceleration>
+        <wheelTorque>20</wheelTorque>
+        <rosDebugLevel>na</rosDebugLevel>
+        </plugin>
+    </gazebo>
+
+</robot>
