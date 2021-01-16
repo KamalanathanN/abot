@@ -37,5 +37,7 @@ roslaunch abot_teleop abot_teleop_key.launch
 ```console
 roslaunch abot_navigation abot_navigation.launch
 ```
+<img src="data/abot_goal_nav.gif" style="zoom:80%;" />
+
 ## Contributions
 Your contributions are most welcomed.
