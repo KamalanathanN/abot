@@ -26,7 +26,11 @@ roslaunch abot_gazebo robot_house_gazebo.launch
 ## ABot Simulation Model 
 <img src="data/abot_model_sim.gif" style="zoom:60%;" />
 
-## ABot Gmapping
+## ABot Gmapping using teleop
+```console
+roslaunch abot_slam abot_gmapping.launch
+roslaunch abot_teleop abot_teleop_key.launch
+```
 <img src="data/abot_gmapping_house_32x_speed.gif" style="zoom:80%;" />
 
 ## ABot Navigation in Gazebo and Rviz
