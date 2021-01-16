@@ -19,9 +19,9 @@ roslaunch abot_gazebo robot_house_gazebo.launch
 ```
 
 ## ABot Simulation Model 
-<img src="data/abot_model_sim.gif" style="zoom:80%;" />
+<img src="data/abot_model_sim.gif" style="zoom:60%;" />
 
-## ABot Navigation Video Links
+## ABot Navigation in Gazebo and Rviz
 ```console
 roslaunch abot_navigation abot_navigation.launch
 ```
