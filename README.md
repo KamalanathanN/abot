@@ -1,6 +1,11 @@
 # ABot
 
 ABot is a differential drive mobile robot based on Robot Operating System (ROS). Its working on Ubuntu 18.04 with ROS Melodic.
+### Capabilities:
+
+- [x] Manual teleop control.
+- [x] SLAM with Gmapping using teleop.
+- [x] Goal Point Navigation using DWAPlanner.
 
 ## Use ABot
 To run the ABot simulation in Gazebo, clone the package in your catkin workspace, and use the launch file below.
