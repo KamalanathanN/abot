@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+	<world name="default">
+      <gui>
+        <camera name="user_camera">
+            <pose>0.3 -0.5 27 0 1.57 1.57</pose>
+        </camera>
+    </gui>
+		<!-- A global light source -->
+		<include>
+			<uri>model://sun</uri>
+		</include>
+
+		<!-- A ground plane -->
+		<include>
+			<uri>model://ground_plane</uri>
+		</include>
+        <!--Cafe-->
+        <include>
+            <uri>model://kitchen_dining</uri>
+            <name>kitchen_dining</name>
+            <pose>0 0 0 0 0 1.57</pose>
+        </include>
+        
+        <include>
+            <uri>model://cafe_table</uri>
+            <name>cafe_table</name>
+            <pose>0 0 0 0 0 0</pose>
+        </include>
+
+	</world>
+</sdf>

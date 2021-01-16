@@ -1,14 +1,17 @@
 <launch>
 
-  <arg name="paused" default="false"/>
-  <arg name="use_sim_time" default="true"/>
-  <arg name="gui" default="true"/>
-  <arg name="headless" default="false"/>
-  <arg name="debug" default="false"/>
+  <arg name="x_pos" default="-1.0"/>
+  <arg name="y_pos" default="-1.0"/>
+  <arg name="z_pos" default="0.0"/>
 
   <!-- We resume the logic in empty_world.launch -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-  <!--<include file="$(find gazebo_ros)/launch/willowgarage_world.launch"> -->
+    <arg name="world_name" value="$(find abot_gazebo)/worlds/house.world"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
   </include>
 
   <!-- urdf xml robot description loaded on the Parameter Server-->
@@ -25,6 +28,6 @@
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-	args="-urdf -model abot -param robot_description"/> 
+	args="-urdf -model abot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description"/> 
 
 </launch>

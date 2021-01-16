@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+	<world name="default">
+      <gui>
+        <camera name="user_camera">
+            <pose>0.3 -0.5 27 0 1.57 1.57</pose>
+        </camera>
+    </gui>
+		<!-- A global light source -->
+		<include>
+			<uri>model://sun</uri>
+		</include>
+
+		<!-- A ground plane -->
+		<include>
+			<uri>model://ground_plane</uri>
+		</include>
+        <!--Cafe-->
+        <include>
+            <uri>model://cafe</uri>
+            <name>cafe</name>
+            <pose>0 0 0 0 0 1.57</pose>
+        </include>
+        
+        <include>
+            <uri>model://table_marble</uri>
+            <name>table_marble</name>
+            <pose>8 2 1 0 0 1.57</pose>
+        </include>
+
+        <include>
+            <uri>model://grey_wall</uri>
+            <name>grey_wall</name>
+            <pose>7.6 -1 0 0 0 0.523599</pose>
+        </include>
+
+
+        <include>
+            <uri>model://table_marble</uri>
+            <name>table_marble_1</name>
+            <pose>5 2 1 0 0 1.57</pose>
+        </include>
+
+
+        <include>
+            <uri>model://control_console</uri>
+            <name>control_console</name>
+            <pose>1 3.8 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>model://first_2015_trash_can</uri>
+            <name>trash_can</name>
+            <pose>-3 -1 0.5 0 0 0</pose>
+        </include>
+
+
+
+	</world>
+</sdf>
