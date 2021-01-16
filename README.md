@@ -2,7 +2,7 @@
 
 ABot is a differential drive mobile robot based on Robot Operating System (ROS). Its working on Ubuntu 18.04 with ROS Melodic.
 
-## To Use ABot
+## Use ABot
 To run the ABot simulation in Gazebo, clone the package in your catkin workspace, and use the launch file below.
 
 ```console
@@ -13,7 +13,7 @@ catkin_make
 source devel/setup.bash
 ```
 
-## To Launch ABot in Gazebo
+## Launch ABot in Gazebo
 ```console
 roslaunch abot_gazebo robot_house_gazebo.launch
 ```
