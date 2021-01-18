@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="boustrophedon_decomposition" default="true"/>
+	<arg name="border_drive" default="false"/>
+
+	<node pkg="abot_path_coverage" type="abot_path_coverage_node.py" name="abot_path_coverage" output="screen">
+		<!-- Whether to execute the boustrophedon decomposition -->
+		<param name="boustrophedon_decomposition" value="$(arg boustrophedon_decomposition)"/>
+		<!-- Drive around the cell first -->
+		<param name="border_drive" value="$(arg border_drive)"/>
+		<!-- Width of each path -->
+		<param name="robot_width" value="0.3"/>
+		<!-- Maximum costmap value to consider free -->
+		<param name="costmap_max_non_lethal" value="70"/>
+		<!-- The robots base frame -->
+		<param name="base_frame" value="base_link"/>
+	</node>
+</launch>
