@@ -32,7 +32,7 @@ roslaunch abot_gazebo robot_house_gazebo.launch
 roslaunch abot_slam abot_gmapping.launch
 roslaunch abot_teleop abot_teleop_key.launch
 ```
-<img src="data/abot_gmapping_house_32x_speed.gif" style="zoom:80%;" />
+<img src="data/abot_gmapping_house_32x_speed_cropped.gif" style="zoom:80%;" />
 
 ## ABot Navigation in Gazebo and Rviz
 ```console
