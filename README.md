@@ -46,5 +46,8 @@ roslaunch abot_path_coverage abot_path_coverage.launch
 ```
 <img src="data/abot_path_coverage_8x_speed_cropped.gif" style="zoom:80%;" />
 
+## References
+[path_coverage_ros](#https://gitlab.com/Humpelstilzchen/path_coverage_ros/)
+
 ## Contributions
 Your contributions are most welcomed.
