@@ -4,7 +4,7 @@ Path coverage is needed for applications like cleaning or mowing where an enviro
 This ROS package executes a coverage path for a given area. The area to cover is given by a polygon which points are set from RViz with "Publish Point". When a successive point equals the first point the area of the polygon is 
 divided into cells by an algorithm which resembles the output of the Boustrophedon Cellular Decomposition, so each cell can be covered with simple back and forth motions. The resulting goal points are then given to the navigation stack:
 
-![path coverage demonstration](https://gitlab.com/Humpelstilzchen/path_coverage_ros/-/raw/master/images/path_coverage.gif)
+![path coverage demonstration](/abot_path_coverage/images/path_coverage.gif)
 
 ## Requirements
 - ROS with configured navigation stack that is tuned to drive close to obstacles and to follow a given goal as straight as possible.
