@@ -1,6 +1,6 @@
 # ABot
 
-ABot is a differential drive mobile robot based on Robot Operating System (ROS). Its working on Ubuntu 18.04 with ROS Melodic.
+ABot is a differential drive mobile robot based on Robot Operating System (ROS). Its tested on Ubuntu 18.04 with ROS Melodic and Ubuntu 20.04 with ROS Noetic
 ### Capabilities:
 
 - [x] Manual teleop control.
