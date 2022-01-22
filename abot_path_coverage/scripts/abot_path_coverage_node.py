@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: iso-8859-15 -*-
 
 import os
@@ -131,7 +131,7 @@ class MapDrive(MarkerVisualization):
 			rows.append(column)
 		#pdb.set_trace()
 		polygons = []
-		with tempfile.NamedTemporaryFile(delete=False) as ftmp:
+		with tempfile.NamedTemporaryFile(delete=False,mode='w') as ftmp:
 			ftmp.write(json.dumps(rows))
 			ftmp.flush()
 			boustrophedon_script = os.path.join(self.rospack.get_path('abot_path_coverage'), "scripts/boustrophedon_decomposition.rb")

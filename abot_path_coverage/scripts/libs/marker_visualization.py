@@ -1,8 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: iso-8859-15 -*-
 
 import rospy
-from list_helper import *
+#from list_helper import *
+from libs.list_helper import *
 from visualization_msgs.msg import Marker
 from geometry_msgs.msg import Point
 
