@@ -63,7 +63,7 @@ Groot has an inbuild ZeroMQ client so we only need to create a ZeroMQ publisher 
 Just create an instance of the ZeroMQ publisher in the class where we initiate our behavior tree and pass our behavior tree to that class as an argument.
 
 ### Minimal template:
-```bash
+```cpp
     /* Include this header file to get the ZMQ publisher*/ 
     #include <behaviortree_cpp_v3/loggers/bt_zmq_publisher.h>
 
