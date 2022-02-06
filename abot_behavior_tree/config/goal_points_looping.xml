@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence>
+            <SetBlackboard output_key="Charge_port" value="-4.61564;-0.4700;-0.70259;0.71158"/>
+            <SetBlackboard output_key="Hall" value="-3.6466;-2.5410;0.7058;0.7084"/>
+            <SetBlackboard output_key="Down_bottom" value="-3.085;-6.102;-0.7083;0.7058"/>
+            <SetBlackboard output_key="Down_right" value="1.70829;-6.2359;0.01655;0.99986"/>
+            <SetBlackboard output_key="Upper_right" value="1.52661;6.2567;0.999998;0.001928"/>
+            <SetBlackboard output_key="Upper_top" value="-1.2652;4.7739;0.71569;0.69840"/>
+            <SetBlackboard output_key="Upper_middle" value="-3.03041;1.07453;-0.002064;0.999997"/>
+            <Fallback>
+                <ReactiveSequence>
+                    <Action ID="InterruptEvent" event="Charge_port"/>
+                    <Repeat num_cycles="3">
+                        <Sequence>
+                            <SubTree ID="MoveRobot" __shared_blackboard="false" target="Hall"/>
+                            <SubTree ID="MoveRobot" __shared_blackboard="false" target="Down_bottom"/>
+                            <SubTree ID="MoveRobot" __shared_blackboard="false" target="Down_right"/>
+                            <SubTree ID="MoveRobot" __shared_blackboard="false" target="Upper_top"/>
+                            <SubTree ID="MoveRobot" __shared_blackboard="false" target="Upper_right"/>
+                            <SubTree ID="MoveRobot" __shared_blackboard="false" target="Upper_middle"/>
+                        </Sequence>
+                    </Repeat>
+                </ReactiveSequence>
+                <Sequence>
+                    <SubTree ID="MoveRobot" __shared_blackboard="false" target="Charge_port"/>
+                </Sequence>
+            </Fallback>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="MoveRobot">
+        <Sequence>
+            <Action ID="MoveBase" goal="{target}"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="InterruptEvent">
+            <input_port name="event" type="std::string"/>
+        </Action>
+        <Action ID="MoveBase">
+            <input_port name="goal" type="Pose2D"/>
+        </Action>
+        <SubTree ID="MoveRobot">
+            <input_port default="false" name="__shared_blackboard">If false (default), the Subtree has an isolated blackboard and needs port remapping</input_port>
+            <input_port name="target"/>
+        </SubTree>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
+

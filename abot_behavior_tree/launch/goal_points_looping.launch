@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="abot_behavior_tree" type="node" name="abot_behaviour_tree" output="screen">
+        <param name="file" value="$(find abot_behavior_tree)/config/goal_points_looping.xml"/>
+    </node>
+
+</launch>
