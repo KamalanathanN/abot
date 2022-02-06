@@ -13,7 +13,7 @@ Editing a BehaviorTree is as simple as editing a XML file in your favourite text
     sudo apt install ros-noetic-behaviortree-cpp-v3
 ```
 ## Get Groot:
-Install dependancy for groot:
+Install dependencies for groot:
 ```console
     sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev
 ```
@@ -33,7 +33,7 @@ Now you can run Groot with:
 Groot and ROS are two separate applications, in order for them to communicate there must be some intermediate program. To do this task we use a plugin called “[ZeroMQ](https://zeromq.org/get-started/)”.
 
 ```console
-    # Dependancy packages
+    # dependency packages
 
     sudo apt install libtool pkg-config build-essential autoconf automake
 
