@@ -9,30 +9,30 @@ Checkout offical Documentation for more: [BehaviorTree.CPP](https://www.behavior
 Editing a BehaviorTree is as simple as editing a XML file in your favourite text editor or just [Groot](https://github.com/BehaviorTree/Groot) it.🙂
 
 ## Install BT:
-```console
+```bash
     sudo apt install ros-noetic-behaviortree-cpp-v3
 ```
 ## Get Groot:
 Install dependencies for groot:
-```console
+```bash
     sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev
 ```
 Run following inside ```your_ros_ws/src/```
-```console
+```bash
     git clone https://github.com/BehaviorTree/Groot.git
     cd ..
     rosdep install --from-paths src --ignore-src
     catkin_make 
 ```
 Now you can run Groot with:
-```console
+```bash
     source your_ros_ws/devel/setup.bash
     rosrun groot Groot
 ```
 ## Groot <-- ? --> ROS
 Groot and ROS are two separate applications, in order for them to communicate there must be some intermediate program. To do this task we use a plugin called “[ZeroMQ](https://zeromq.org/get-started/)”.
 
-```console
+```bash
     # dependency packages
 
     sudo apt install libtool pkg-config build-essential autoconf automake
@@ -63,7 +63,7 @@ Groot has an inbuild ZeroMQ client so we only need to create a ZeroMQ publisher 
 Just create an instance of the ZeroMQ publisher in the class where we initiate our behavior tree and pass our behavior tree to that class as an argument.
 
 ### Minimal template:
-```console
+```bash
     /* Include this header file to get the ZMQ publisher*/ 
     #include <behaviortree_cpp_v3/loggers/bt_zmq_publisher.h>
 
