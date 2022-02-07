@@ -56,6 +56,8 @@ To run the ABot simulation in Gazebo, clone the package in your catkin workspace
 
 ## Abot Behavior Tree Demo
 
+> Checkout this guide for [Behavior Tree Setup](https://github.com/KamalanathanN/abot/tree/main/abot_behavior_tree#behavior-tree-setup)
+
 Below is a simple goal points looping behaviour tree with an interrupt action to go to charge port location.
 
 - In future, interrupt action can be used by battery monitoring node to perform auto charge behavior.
