@@ -62,6 +62,8 @@ Below is a simple goal points looping behaviour tree with an interrupt action to
 
 ### Runtime Behahivor Tree monitoring with Groot
 
+https://user-images.githubusercontent.com/31615486/152803981-b7dd6d3e-62fd-4a26-9e99-6f240f8b9eb8.mp4
+
 Run the below commands in seperate terminals after launching ```robot_house_gazebo.launch``` and ```abot_navigation.launch``` 
 ```bash
     rosrun groot Groot # select Monitor option and Start
