@@ -30,7 +30,7 @@ To run the ABot simulation in Gazebo, clone the package in your catkin workspace
 
 ## ABot Simulation Model 
 
-<img src="data/abot_model_sim.gif" style="zoom:60%;" />
+<img src="data/abot_model_depth.gif" style="zoom:130%;" />
 
 ## ABot Gmapping using teleop
 
@@ -55,8 +55,6 @@ To run the ABot simulation in Gazebo, clone the package in your catkin workspace
 <img src="data/abot_path_coverage_8x_speed_cropped.gif" style="zoom:80%;" />
 
 ## Abot Behavior Tree Demo
-
-> Checkout this guide for [Behavior Tree Setup](https://github.com/KamalanathanN/abot/tree/main/abot_behavior_tree#behavior-tree-setup)
 
 Below is a simple goal points looping behaviour tree with an interrupt action to go to charge port location.
 
