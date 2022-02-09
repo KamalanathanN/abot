@@ -84,6 +84,7 @@ Notice the STATE of each node in tree gets highlighted with Cyan(IDLE) Yellow(RU
 ## References
 
 [path_coverage_ros](https://gitlab.com/Humpelstilzchen/path_coverage_ros/)
+
 [Groot with ROS](https://medium.com/teamarimac/groot-with-ros-a8f7855f8e35)
 
 ## Contributions
