@@ -3,6 +3,7 @@
 <robot name="abot" xmlns:xacro="http://ros.org/wiki/xacro">
 
 <xacro:include filename="$(find abot_description)/urdf/robot.gazebo.xacro"/>
+<xacro:include filename="$(find abot_description)/urdf/_d435.urdf.xacro" />
 
 <link name="base_link"></link>
 
@@ -16,7 +17,7 @@
 <visual>
 <origin xyz="9.21702e-10 0.00447478 0.0341544" rpy="0 -0 0" />
 <geometry>
-<mesh filename="package://abot_description/urdf/chassis.stl"/>
+<mesh filename="package://abot_description/meshes/chassis.stl"/>
 </geometry>
 <material name="chassis_material">
 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -25,7 +26,7 @@
 <collision>
 <origin xyz="9.21702e-10 0.00447478 0.0341544" rpy="0 -0 0" />
 <geometry>
-<mesh filename="package://abot_description/urdf/chassis.stl"/>
+<mesh filename="package://abot_description/meshes/chassis.stl"/>
 </geometry>
 <material name="chassis_material">
 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -42,7 +43,7 @@
 <visual>
 <origin xyz="0 0 -0.009" rpy="-1.5708 -1.5708 0" />
 <geometry>
-<mesh filename="package://abot_description/urdf/wheel.stl"/>
+<mesh filename="package://abot_description/meshes/wheel.stl"/>
 </geometry>
 <material name="wheel_material">
 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -85,7 +86,7 @@
 <visual>
 <origin xyz="0 0 -0.009" rpy="1.5708 1.5708 0" />
 <geometry>
-<mesh filename="package://abot_description/urdf/wheel.stl"/>
+<mesh filename="package://abot_description/meshes/wheel.stl"/>
 </geometry>
 <material name="wheel_material">
 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -127,7 +128,7 @@
 <visual>
 <origin xyz="0 0 -0.094554" rpy="-1.5708 -1.5708 0" />
 <geometry>
-<mesh filename="package://abot_description/urdf/roller.stl"/>
+<mesh filename="package://abot_description/meshes/roller.stl"/>
 </geometry>
 <material name="roller_material">
 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -175,7 +176,7 @@
     <visual>
       <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abot_description/urdf/lds.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://abot_description/meshes/lds.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark"/>
     </visual>
@@ -196,4 +197,7 @@
     </inertial>
   </link>
 
+  <xacro:sensor_d435 name="camera" topics_ns="camera" parent="chassis" publish_pointcloud="true">
+    <origin xyz="0 0.08 0.065" rpy="0 -0.139626 1.5708" /> <!-- tilted 8 degree up -->
+  </xacro:sensor_d435> 
 </robot>
