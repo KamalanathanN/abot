@@ -9,6 +9,7 @@ ABot is a differential drive mobile robot based on Robot Operating System (ROS).
 - [x] Goal Point Navigation using DWAPlanner.
 - [x] Coverage Planning with Boustrophedon Decomposition.
 - [x] Configured Behavior Tree 
+- [x] Added Intel Realsense D435
 
 ## Use ABot
 
