@@ -5,7 +5,7 @@ ABot is a differential drive mobile robot based on Robot Operating System (ROS).
 ### Capabilities:
 
 - [x] Manual teleop control.
-- [x] SLAM with Gmapping using teleop.
+- [x] SLAM with Gmapping using teleop and explore_lite.
 - [x] Goal Point Navigation using DWAPlanner.
 - [x] Coverage Planning with Boustrophedon Decomposition.
 - [x] Configured Behavior Tree 
@@ -41,6 +41,19 @@ To run the ABot simulation in Gazebo, clone the package in your catkin workspace
     roslaunch abot_teleop abot_teleop_key.launch
 ```
 <img src="data/abot_gmapping_house_32x_speed_cropped.gif" style="zoom:80%;" />
+
+## ABot Gmapping with [explore_lite](http://wiki.ros.org/explore_lite)
+
+```
+    sudo apt install ros-noetic-explore-lite
+```
+
+```bash 
+    roslaunch abot_slam abot_gmapping.launch
+    roslaunch abot_navigation move_base.launch
+    roslaunch explore_lite explore.launch
+```
+<img src="data/abot_exp.gif" style="zoom:80%;" />
 
 ## ABot Navigation in Gazebo and Rviz
 
