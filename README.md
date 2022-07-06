@@ -56,6 +56,15 @@ To run the ABot simulation in Gazebo, clone the package in your catkin workspace
 <img src="data/abot_exp.gif" style="zoom:80%;" />
 
 ## ABot Navigation in Gazebo and Rviz
+By default navigation uses ```dwa_local_planner``` with argument ```TEB:=true``` loads ```teb_local_planner```.
+<details>
+<summary>Read if using teb_local_planner</summary>
+<br>
+The default teb_local_planner pkg did not show goal reached success.
+Due to this multi goal sequence was not possible.
+Temporary fix is to remove the installed teb_local_planner and 
+clone this modified repo : https://github.com/KamalanathanN/teb_local_planner inside the workspace.
+</details>
 
 ```bash
     roslaunch abot_navigation abot_navigation.launch
