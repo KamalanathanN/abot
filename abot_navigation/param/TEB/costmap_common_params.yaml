@@ -1,0 +1,14 @@
+obstacle_range: 5.5
+raytrace_range: 6.0
+
+#footprint: [[-0.105, -0.105], [-0.105, 0.105], [0.041, 0.105], [0.041, -0.105]] #Turtlebot_burger
+footprint: [[-0.14, -0.15], [-0.14, 0.15], [0.14, 0.15], [0.14, -0.15]]
+#robot_radius: 0.2
+footprint_padding: 0.05
+cost_scaling_factor: 3.0
+inflation_radius: 2.0
+
+
+map_type: costmap
+observation_sources: scan
+scan: {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}
