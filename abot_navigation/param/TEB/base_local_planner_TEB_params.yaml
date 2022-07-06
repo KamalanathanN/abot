@@ -28,7 +28,7 @@ TebLocalPlannerROS:
    front_radius: 0.2 # for type "two_circles"
    rear_offset: 0.2 # for type "two_circles"
    rear_radius: 0.2 # for type "two_circles"
-   vertices: [[-0.36, -0.28], [-0.36, 0.28], [0.36, 0.28], [0.36, -0.28]] # for type "polygon"
+   vertices: [[-0.14, -0.15], [-0.14, 0.15], [0.14, 0.15], [0.14, -0.15]] # for type "polygon"
 
  # GoalTolerance
     
@@ -38,7 +38,7 @@ TebLocalPlannerROS:
     
  # Obstacles
     
- min_obstacle_dist: 0.3
+ min_obstacle_dist: 0.2
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30
