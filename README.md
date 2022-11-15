@@ -10,7 +10,9 @@ ABot is a differential drive mobile robot based on Robot Operating System (ROS).
 - [x] Coverage Planning with Boustrophedon Decomposition.
 - [x] Configured Behavior Tree 
 - [x] Added Intel Realsense D435
-- [ ] RTAB-Map
+- [x] RTAB-Map
+- [ ] Add GPS
+- [ ] Add manipulator arm
 
 ## Use ABot
 
@@ -102,6 +104,37 @@ Notice the STATE of each node in tree gets highlighted with Cyan(IDLE) Yellow(RU
 ```bash
     rostopic pub /interrupt_event std_msgs/String "data: 'Charge_port'"
 ```
+
+## ABot RTAB-Map
+- Install and setup RTAB-Map from this [link](https://github.com/introlab/rtabmap/wiki/Installation)
+- Clone the realsense gazebo plugin to your workspace's ```/src``` and ```catkin_make```
+ 
+```bash
+    git clone https://github.com/pal-robotics/realsense_gazebo_plugin 
+ ``` 
+Run the below commands in seperate terminals after launching ```robot_house_gazebo.launch```
+### Mapping
+```bash
+    roslaunch abot_rtabmap rtab_minimal.launch args:="--delete_db_on_start"
+```
+- Make sure to give proper save path for ```rtabmap.db``` inside launch file.
+- Make sure your world is not monotonous, have good textural variances in walls and have variety of objects.
+- Use ```teleop_twist_keyboard``` or ```explore_lite``` for map creation.
+- To save the map just close the terminal running the mapping node : ```ctrl+c``` 
+
+<img src="data/abot_rtabmap.gif" style="zoom:100%;" />
+
+### Navigation
+First load the ```rtabmap.db``` in localization mode:
+```bash
+    roslaunch abot_rtabmap rtab_minimal.launch localization:=true
+```
+Now launch the navigation with desired local planner:
+```bash
+    roslaunch abot_navigation abot_navigation_rtabmap.launch TEB:=true
+```
+
+<img src="data/abot_rtabmap_nav.gif" style="zoom:100%;" />
 
 ## References
 

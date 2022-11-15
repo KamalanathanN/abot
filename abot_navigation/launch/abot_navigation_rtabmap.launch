@@ -1,0 +1,30 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+  <arg name="TEB" default="false"/>
+
+  <!-- abot -->
+  <!-- urdf xml robot description loaded on the Parameter Server-->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find abot_description)/urdf/robot.urdf.xacro'" />
+
+  <!--default move_base -->
+  <group unless="$(arg TEB)">
+      <include file="$(find abot_navigation)/launch/move_base.launch">
+        <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+      </include>
+  </group>
+  
+  <!--TEB planner move_base -->
+  <group if="$(arg TEB)">
+      <include file="$(find abot_navigation)/launch/move_base_TEB.launch">
+        <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+      </include>
+  </group>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find abot_navigation)/rviz/abot_navigation_house_rtabmap.rviz"/>
+  </group>
+</launch>
